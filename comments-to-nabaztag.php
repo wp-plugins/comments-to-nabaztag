@@ -48,7 +48,7 @@ function send_to_nabaztag($comment_id, $approved)
 		
 		// Set optional parameters
 		$options = array();
-		$voice = get_options("nab_voice");
+		$voice = get_option("nab_voice");
 		if($voice)
 		{
 		  $options["voice"] = $voice;
