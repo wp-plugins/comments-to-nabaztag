@@ -26,12 +26,8 @@ Author URI: http://web2.0du.de
 */
 
 include_once("lib/nabaztagApi.class.php");
-
-//  Get i18n strings
 $plugin_dir = basename(dirname(__FILE__));
-load_plugin_textdomain( 'nabaztag', 'wp-content/plugins/' . $plugin_dir. '/i18n/', $plugin_dir );
-
-
+load_plugin_textdomain('nabaztag', '', $plugin_dir);
 
 /**
  * Send the comment to nabaztag if it is not spam
@@ -72,8 +68,8 @@ function nabaztag_option_page()
 
 function nabaztag_add_menu() 
 {
-	add_option("nab_id","Id deine Nabaztags"); 
-	add_option("nab_token","Token deine Nabaztags"); 	
+	add_option("nab_id",""); 
+	add_option("nab_token",""); 	
 	add_options_page('Nabaztag-Comments', 'Nabaztag Comments', 9, __FILE__, 'nabaztag_option_page'); //optionenseite hinzuf�gen
 }
 
