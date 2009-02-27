@@ -18,8 +18,41 @@ class NabaztagAPI
   {
     $this->auth_params = array("sn" => $sn, "token" => $token);
     $this->call_params = array();
-    $this->call_params["chor"] = "1,";
     $this->settings = $settings;
+  }
+  
+  /**
+   * Validates the current credentials
+   * @return boolean
+   */
+  public function validateCredentials()
+  {
+    $this->call_params["action"] = 10;
+    $response = $this->callNabaztag();
+    return ($response instanceof SimpleXMLElement && isset($response->rabbitName));
+  }
+  
+  /**
+   * Get the nabaztags name
+   * @return string name
+   */
+  public function getRabbitName()
+  {
+    $this->call_params["action"] = 10;
+    $response = $this->callNabaztag();
+    return (string)$response->rabbitName;
+  }
+  
+  /**
+   *  Starts a choeographie
+   *
+   * @return $this
+   */
+  
+  public function startChoreographie()
+  {
+     $this->call_params["chor"] = "1,";
+     return $this;
   }
 
   /**
@@ -28,11 +61,12 @@ class NabaztagAPI
    * @param integer angle (between 1 and 180)
    * @param integer rotation direction (1 or 2)
    * @param integer l'heure (time)
+   * @return $this
    */
   public function addEarCommand($timeslice, $ear, $angle, $rotation)
   {
 	$this->call_params["chor"] .= $timeslice.",motor,".$ear.",".$angle.",0,".$rotation;
-	echo $timeslice.",motor,".$ear.",".$angle.",0,".$rotation;
+	return $this;
   }
 
   /**
@@ -40,10 +74,12 @@ class NabaztagAPI
    * @param integer Led (0 bottom, 1 left, 2 middle, 3 right, 4 nose)
    * @param array Hex-Color
    * @param integer l'heure (time)
+   * @return $this
    */
   public function addLedCommand($timeslice, $led, $color)
   {
 	$this->call_params["chor"] .= $timeslice.",led,".$led.",".implode(",",$color).",";
+	return $this;
   }
 
   /**
@@ -100,7 +136,7 @@ class NabaztagAPI
    */
   public function callNabaztag()
   {
-    $params = array_merge($this->auth_params, $this->call_params);
+    $params = array_merge($this->auth_params, $this->call_params, $this->settings);
     $url = "";  
 
     $param_url = "";
@@ -109,8 +145,8 @@ class NabaztagAPI
     }
 
     $url = $this->endpoint.substr($param_url, 1);
-    return simplexml_load_file($url);
     $this->call_params = array();
+    return simplexml_load_file($url);
   }
 }
 ?>
