@@ -19,3 +19,11 @@ If your should have any feature requests, please visit my site and drop a few li
 1. Upload the folder 'comments-to-nabaztg' to the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
 3. Set up the plugin
+
+== Frequently Asked Questions ==
+
+None
+
+== Screenshots ==
+
+None
