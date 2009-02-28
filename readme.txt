@@ -23,11 +23,31 @@ If your should have any feature requests, please visit my site and drop a few li
 
 == Frequently Asked Questions ==
 
-None
+= WTF is a Nabaztag =
+ 
+A Nabaztag is an electronic WIFI-Rabbit that. If you still have no clue have a look at [the Vendors website](http://www.violet.net/_nabaztag-the-first-rabbit-connected-to-the-internet.html)
+
+= Can you add feature xyz? =
+
+Absolutely! Drop a comment on [my Blog](http://web2.0du.de/2009/02/27/comments-to-nabaztag-version-01/) - if I like the idea I will add it!
+
+= Are you related to Violet? =
+
+No.
 
 == Screenshots ==
 
+1. The admin panel of Comments to Nabaztags. With a few simple steps the plugin is set up.
+
+== Translators ==
+
+This people did a great job translating the addon.
+* French translation: Merci http://www.nabzone.com!
+
 == Updates ==
+
+* 0.1.2
+  * Added french translation - big thanks to [nabzone](http://nabzone.com) for helping out
 
 * 0.1.1
   * Moved to newer version of the NabPHP-Library

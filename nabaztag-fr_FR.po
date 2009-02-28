@@ -1,0 +1,128 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Robert Curth
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Comments to Nabaztag\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/comments-to-nabaztag\n"
+"POT-Creation-Date: 2009-02-28 17:43+0000\n"
+"PO-Revision-Date: 2009-02-28 21:46+0100\n"
+"Last-Translator: Robert Curth <robert@rocu,de>\n"
+"Language-Team:  <robert@rocu.de>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: French\n"
+"X-Poedit-Country: FRANCE\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#: comments-to-nabaztag.php:98
+msgid "This is a test. Do you like this voice? Then use submit to save these settings!"
+msgstr "Ceci est un text de voix. Vous l'aimez ? Alors cliquez sur Enregistrer pour sauvegarder les paramètres."
+
+#: comments-to-nabaztag.php:113
+#, php-format
+msgid "%s has written following comment: %s"
+msgstr "%s a écrit le message suivant : %s"
+
+#: template/admin_template.php:2
+msgid "Step 1: Get your serialnumber and token"
+msgstr "Etape 1 : Obtenez le Numéro de série et le Token"
+
+#: template/admin_template.php:3
+#, php-format
+msgid "Get your serialnumber and securitytoken from %s and ensure that you enable access to your Nabaztag via the API."
+msgstr "Le Numéro de Série et le Token sont disponibles sur %s. Dans l'onglet 'Ecosystème' des paramètres de votre Nabaztag. Croitez 'Je veux recevoir les services et les applications de l'écosystème'."
+
+#: template/admin_template.php:7
+msgid "Step 2: Set the credentials"
+msgstr "Etape 2 : Enregistrez vos identifiants"
+
+#: template/admin_template.php:8
+msgid "These two settings, are all the plugin needs. After submiting the form, you're visitors will speak through you're rabbit. Cool aye?"
+msgstr "Le plugin a juste besoin de ces deux paramètres. Une fois le formulaire soumis, vos visiteurs pourront envoyer un message à votre Nabaztag. Cool non !"
+
+#: template/admin_template.php:14
+msgid "Error!"
+msgstr "Erreur"
+
+#: template/admin_template.php:15
+msgid "You're credentials are wrong. Please check the fields and submitt the form again."
+msgstr "Vos identifiants sont faux. Veuillez les vérifier avant de soumettre de nouveau le formulaire."
+
+#: template/admin_template.php:21
+msgid "Success"
+msgstr "Bravo !"
+
+#: template/admin_template.php:22
+#, php-format
+msgid "%s will read out you're comments!"
+msgstr "%s va lire votre message !"
+
+#: template/admin_template.php:28
+msgid "Serialnumber"
+msgstr "Numéro de série"
+
+#: template/admin_template.php:32
+msgid "Token"
+msgstr "Token"
+
+#: template/admin_template.php:37
+#: template/admin_template.php:60
+msgid "Submit"
+msgstr "Enregistrer"
+
+#: template/admin_template.php:40
+msgid "Step 3: Pick your favourite voice!"
+msgstr "Etape 3 : Choissisez votre voix favorite"
+
+#: template/admin_template.php:41
+msgid "In the selectbox below you find a list of all the available voices four your languages."
+msgstr "Ci-dessous, la liste des voix françaises disponibles."
+
+#: template/admin_template.php:42
+msgid "Pick a voice, adjust the notification test and press preview. If you like the sound save your settings with submit"
+msgstr "Réglez la voix, le message de test et cliquez sur 'Pré-ecouter'. Si le test vous convient, enregistrez vos paramètres."
+
+#: template/admin_template.php:46
+msgid "Notification Text"
+msgstr "Message de test"
+
+#: template/admin_template.php:50
+msgid "Voice"
+msgstr "Voix"
+
+#: template/admin_template.php:61
+msgid "Preview"
+msgstr "Pré-ecouter"
+
+#: template/admin_template.php:64
+msgid "Step 4: Enjoy your Nabaztag and giv'me some feedback"
+msgstr "Etape 4 : Amusez-vous avec votre Nabatag et envoyez-moi vos commenatires"
+
+#: template/admin_template.php:65
+msgid "I'd really like to get some feedback from you. Please drop me a line if you like the plugin or want new features."
+msgstr "J'aimerais vraiment avoir votre avis à propos de ce plugin. Envoyez-moi un petit message si vous l'aimez ou si vous avez des suggestions pour l'améliorer ou bien si vous souhaitez de nouvelles fonctionnalités."
+
+#. Plugin Name of an extension
+msgid "Comments to Nabaztag"
+msgstr "Messages pour le Nabztag"
+
+#. Plugin URI of an extension
+msgid "http://web2.0du.de/"
+msgstr "http://web2.0du.de/"
+
+#. Description of an extension
+msgid "This plugin forwards your comments to your Nabaztag."
+msgstr "Ce plugin transmet des messages à votre Nabaztag."
+
+#. Author of an extension
+msgid "Robert Curth"
+msgstr "Robert Curth"
+
+#. Author URI of an extension
+msgid "http://web2.0du.de"
+msgstr "http://web2.0du.de"
+

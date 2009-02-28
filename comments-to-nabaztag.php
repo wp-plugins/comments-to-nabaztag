@@ -3,7 +3,7 @@
 Plugin Name: Comments to Nabaztag
 Plugin URI: http://web2.0du.de/
 Description: This plugin forwards your comments to your Nabaztag.
-Version: 0.1.1
+Version: 0.1.2
 Author: Robert Curth
 Author URI: http://web2.0du.de
 */
