@@ -11,15 +11,15 @@
   
   <?php if($flash_1):?>
     <p style='padding:0 8px;color:#9f6000;background-color:#feefb3;border:1px solid #9f6000;'>
-    <strong><?php echo __("Error!")?></strong>
-    <?php echo __("You're credentials are wrong. Please check the fields and submitt the form again.")?> 
+    <strong><?php echo __("Error!", "nabaztag")?></strong>
+    <?php echo __("You're credentials are wrong. Please check the fields and submitt the form again.", "nabaztag")?> 
   </p>
   <?php endif;?>
   
   <?php if($flash_2):?>
     <p style='padding:0 8px;color:#9f6000;background-color:#6ffc63;border:1px solid #9f6000;'>
-    <strong><?php echo __("Success")?></strong> - 
-    <?php printf(__("%s will read out you're comments!"), get_option("nab_name")) ?> 
+    <strong><?php echo __("Success", "nabaztag")?></strong> - 
+    <?php printf(__("%s will read out you're comments!", "nabaztag"), get_option("nab_name")) ?> 
   </p>
   <?php endif;?>
   
@@ -38,8 +38,8 @@
 </form>
 <?php if(get_option("nab_valid") == 1):?>
 <h2><?php echo __("Step 3: Pick your favourite voice!", 'nabaztag')?></h2>
-<p><?php echo __("In the selectbox below you find a list of all the available voices four your languages.")?><br />
-   <?php echo __("Pick a voice, adjust the notification test and press preview. If you like the sound save your settings with submit")?></p>
+<p><?php echo __("In the selectbox below you find a list of all the available voices four your languages.", "nabaztag")?><br />
+   <?php echo __("Pick a voice, adjust the notification test and press preview. If you like the sound save your settings with submit", "nabaztag")?></p>
 <form name="form2" method="post" action="<?php $location ?>">
 <table class="form-table">
   <tr valign="top">

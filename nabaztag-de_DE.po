@@ -5,10 +5,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Comments to Nabaztag 0.1\n"
+"Project-Id-Version: Comments to Nabaztag\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/comments-to-nabaztag\n"
-"POT-Creation-Date: 2009-02-27 17:31+0000\n"
-"PO-Revision-Date: 2009-02-27 19:09+0100\n"
+"POT-Creation-Date: 2009-02-28 17:43+0000\n"
+"PO-Revision-Date: 2009-02-28 18:53+0100\n"
 "Last-Translator: Robert Curth <robert@rocu,de>\n"
 "Language-Team: Robert Curth <robert@rocu.de>\n"
 "MIME-Version: 1.0\n"
@@ -17,6 +17,15 @@ msgstr ""
 "X-Poedit-Language: German\n"
 "X-Poedit-Country: GERMANY\n"
 "X-Poedit-SourceCharset: utf-8\n"
+
+#: comments-to-nabaztag.php:98
+msgid "This is a test. Do you like this voice? Then use submit to save these settings!"
+msgstr "Dies ist ein Test. Magst du diese Stimme? Dann klicke speichern und speicher diese Einstellungen."
+
+#: comments-to-nabaztag.php:113
+#, php-format
+msgid "%s has written following comment: %s"
+msgstr "%s hat folgenden Kommentar geschrieben: %s"
 
 #: template/admin_template.php:2
 msgid "Step 1: Get your serialnumber and token"
@@ -35,33 +44,71 @@ msgstr "Schritt 2: Richte die Zugangsdaten ein"
 msgid "These two settings, are all the plugin needs. After submiting the form, you're visitors will speak through you're rabbit. Cool aye?"
 msgstr "Das Plugin brqaucht nur diese beiden Einstellungen. Nachdem du das Formular abgeschickt hast, sprechen Deine Besucher durch Deinen Nabaztag zu Dir. Cool, was?"
 
-#: template/admin_template.php:12
+#: template/admin_template.php:14
+msgid "Error!"
+msgstr "Fehler!"
+
+#: template/admin_template.php:15
+msgid "You're credentials are wrong. Please check the fields and submitt the form again."
+msgstr "Deine Zugangsdaten waren falsch. Bitte überprüfe sie noch einmal und übermittle das Formular erneut!"
+
+#: template/admin_template.php:21
+msgid "Success"
+msgstr "Erfolg!"
+
+#: template/admin_template.php:22
+#, php-format
+msgid "%s will read out you're comments!"
+msgstr "%s liest jetzt deine Kommentare!"
+
+#: template/admin_template.php:28
 msgid "Serialnumber"
 msgstr "Seriennummer"
 
-#: template/admin_template.php:16
+#: template/admin_template.php:32
 msgid "Token"
 msgstr "Token"
 
-#: template/admin_template.php:24
-msgid "Step 3: Configure the plugin further, if you like!"
-msgstr "Schritt 3: Konfiguriere noch mehr rum, wenn du magst"
+#: template/admin_template.php:37
+#: template/admin_template.php:60
+msgid "Submit"
+msgstr "Speichern"
 
-#: template/admin_template.php:27
+#: template/admin_template.php:40
+msgid "Step 3: Pick your favourite voice!"
+msgstr "Schritt 3: Wähle Deine Lieblingsstimme!"
+
+#: template/admin_template.php:41
+msgid "In the selectbox below you find a list of all the available voices four your languages."
+msgstr "In der Selectbox findest du alle verfügbaren Stimmen in Deinen gewählten Sprachen."
+
+#: template/admin_template.php:42
+msgid "Pick a voice, adjust the notification test and press preview. If you like the sound save your settings with submit"
+msgstr "Wähle eine Stimme aus, ändere den Text und drücke Vorschau. Wenn du den Klang magst, speicher deine Einstellungen."
+
+#: template/admin_template.php:46
+msgid "Notification Text"
+msgstr "Benachrichtigungstext"
+
+#: template/admin_template.php:50
 msgid "Voice"
 msgstr "Stimme"
 
-#: template/admin_template.php:36
-msgid "Step 4: Enjoy your Nabaztag and giv'me some feedback"
-msgstr "Schrit 4: Genieße Deinen Nabaztag und gib mir Feedback"
+#: template/admin_template.php:61
+msgid "Preview"
+msgstr "Vorschau"
 
-#: template/admin_template.php:37
+#: template/admin_template.php:64
+msgid "Step 4: Enjoy your Nabaztag and giv'me some feedback"
+msgstr "Schritt 4: Genieße Deinen Nabaztag und gib mir Feedback."
+
+#: template/admin_template.php:65
 msgid "I'd really like to get some feedback from you. Please drop me a line if you like the plugin or want new features."
-msgstr "Ich hätte gerne feedback von Dir. Bitte schreib mir, falls Du das Plugin magst, oder dir mehr Features wünscht!"
+msgstr "Ich hätte gerne Feedback von Dir. Bitte schreib mir, falls Du das Plugin magst, oder dir mehr Features wünscht!"
 
 #. Plugin Name of an extension
 msgid "Comments to Nabaztag"
-msgstr "Kommentare zum Nabaztag"
+msgstr "Nabaztag-Kommentare"
 
 #. Plugin URI of an extension
 msgid "http://web2.0du.de/"
@@ -69,7 +116,7 @@ msgstr "http://web2.0du.de/"
 
 #. Description of an extension
 msgid "This plugin forwards your comments to your Nabaztag."
-msgstr "Dieses Plugin leitet deine Kommentare an deinen Nabaztag weiter"
+msgstr "Dieses Plugin leitet deine Kommentage an deinen Nabaztag weiter."
 
 #. Author of an extension
 msgid "Robert Curth"
@@ -77,5 +124,5 @@ msgstr "Robert Curth"
 
 #. Author URI of an extension
 msgid "http://web2.0du.de"
-msgstr "http://web2.0du.de"
+msgstr "http://web2.0du.de/"
 

@@ -95,7 +95,7 @@ function nabaztag_option_page()
 	{
 	  $options = array("voice" => $_POST['voice']);
 	  $api = new NabPHP(get_option("nab_id"), get_option("nab_token"), $options);
-	  $message = sprintf($_POST['nab_message'], "Robert Curth", __("This is a test. Do you like this voice? Then use submit to save these settings!"));
+	  $message = sprintf($_POST['nab_message'], "Robert Curth", __("This is a test. Do you like this voice? Then use submit to save these settings!", "nabaztag"));
 	  $api->sendTts($message);
 	}
 	
@@ -110,7 +110,7 @@ function nabaztag_add_menu()
 	add_option("nab_valid", 0);
 	add_option("nab_voices_cache", "");
 	add_option("nab_name", "");
-	add_option("nab_message", __("%s has written following comment: %s"));	
+	add_option("nab_message", __("%s has written following comment: %s", "nabaztag"));	
 	add_options_page('Nabaztag-Comments', 'Nabaztag Comments', 9, __FILE__, 'nabaztag_option_page'); //optionenseite hinzuf�gen
 }
 
