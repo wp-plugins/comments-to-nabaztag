@@ -5,7 +5,7 @@ Tags: nabaztag,comment, gadget
 Text Domain: nabaztag
 Requires at least: 2.7
 Tested up to: 2.7.1
-Stable tag: 0.1
+Stable tag: trunk
 
 Comments to Nabaztags send your Comments to your Rabbit and executes a choreographie.
 
