@@ -27,4 +27,9 @@ None
 
 == Screenshots ==
 
-None
+== Updates ==
+
+* 0.1.1
+  * Moved to newer version of the NabPHP-Library
+  * Added option to change the message
+  * Added preview button, that sends a test-message to nabaztag

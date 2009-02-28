@@ -3,7 +3,7 @@
 Plugin Name: Comments to Nabaztag
 Plugin URI: http://web2.0du.de/
 Description: This plugin forwards your comments to your Nabaztag.
-Version: 0.1
+Version: 0.1.1
 Author: Robert Curth
 Author URI: http://web2.0du.de
 */
@@ -25,7 +25,8 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-include_once("lib/nabaztagApi.class.php");
+include_once("lib/NabPHP.class.php");
+include_once("lib/NabChor.class.php");
 $plugin_dir = basename(dirname(__FILE__));
 load_plugin_textdomain('nabaztag', '', $plugin_dir);
 
@@ -54,8 +55,8 @@ function send_to_nabaztag($comment_id, $approved)
 		  $options["voice"] = $voice;
 		}
 		
-		$api = new NabaztagApi($nab_id, $nab_token, $options); 
-		$message = sprintf("%s hat folgenden Kommentar geschrieben: %s", $comment->comment_author, $comment->comment_content);
+		$api = new NabPHP($nab_id, $nab_token, $options); 
+		$message = sprintf(get_option("nab_message"), $comment->comment_author, $comment->comment_content);
 		
 		$api->sendTts($message);
 	}
@@ -69,7 +70,7 @@ function nabaztag_option_page()
 		$nab_token = mysql_escape_string($_POST['nab_token']);
 		
 		// Validate credentials
-		$api = new NabaztagApi($nab_id, $nab_token);
+		$api = new NabPHP($nab_id, $nab_token);
 		if($api->validateCredentials())
 		{	
 		  update_option("nab_id",$nab_id);
@@ -90,6 +91,14 @@ function nabaztag_option_page()
 	  update_option("nab_voice",$voice);
 	}
 	
+	if (isset($_POST['nb_preview']))
+	{
+	  $options = array("voice" => $_POST['voice']);
+	  $api = new NabPHP(get_option("nab_id"), get_option("nab_token"), $options);
+	  $message = sprintf($_POST['nab_message'], "Robert Curth", __("This is a test. Do you like this voice? Then use submit to save these settings!"));
+	  $api->sendTts($message);
+	}
+	
 	include_once("template/admin_template.php");
 }
 
@@ -100,10 +109,10 @@ function nabaztag_add_menu()
 	add_option("nab_voice", "");
 	add_option("nab_valid", 0);
 	add_option("nab_voices_cache", "");
-	add_option("nab_name", "");	
+	add_option("nab_name", "");
+	add_option("nab_message", __("%s has written following comment: %s"));	
 	add_options_page('Nabaztag-Comments', 'Nabaztag Comments', 9, __FILE__, 'nabaztag_option_page'); //optionenseite hinzuf�gen
 }
-
 
 add_action("comment_post", "send_to_nabaztag", 10, 2);
 add_action('admin_menu', 'nabaztag_add_menu');

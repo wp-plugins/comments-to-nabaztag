@@ -1,8 +1,16 @@
 <?php
+/**
+ * NabPHP is a Open Source PHP-Library for communication with the Nabaztag
+ * 
+ * @author Robert Curth
+ * @package NabPHP
+ * @license GNU General Public License v3
+ */
 
-class NabaztagAPI
+class NabPHP
 {
   private $endpoint = "http://api.nabaztag.com/vl/FR/api.jsp?";
+  private $stream_endpoint = "http://api.nabaztag.com/vl/FR/api_stream.jsp?";
   private $auth_params; // Associative array with Sn + Token
   private $call_params; // Associative array with the params for this API-Call
   private $led_store;
@@ -28,7 +36,7 @@ class NabaztagAPI
   public function validateCredentials()
   {
     $this->call_params["action"] = 10;
-    $response = $this->callNabaztag();
+    $response = $this->callApi();
     return ($response instanceof SimpleXMLElement && isset($response->rabbitName));
   }
   
@@ -39,47 +47,8 @@ class NabaztagAPI
   public function getRabbitName()
   {
     $this->call_params["action"] = 10;
-    $response = $this->callNabaztag();
+    $response = $this->callApi();
     return (string)$response->rabbitName;
-  }
-  
-  /**
-   *  Starts a choeographie
-   *
-   * @return $this
-   */
-  
-  public function startChoreographie()
-  {
-     $this->call_params["chor"] = "1,";
-     return $this;
-  }
-
-  /**
-   * Add led command
-   * @param integer ear (1 left, 1 right)
-   * @param integer angle (between 1 and 180)
-   * @param integer rotation direction (1 or 2)
-   * @param integer l'heure (time)
-   * @return $this
-   */
-  public function addEarCommand($timeslice, $ear, $angle, $rotation)
-  {
-	$this->call_params["chor"] .= $timeslice.",motor,".$ear.",".$angle.",0,".$rotation;
-	return $this;
-  }
-
-  /**
-   * Add ear command
-   * @param integer Led (0 bottom, 1 left, 2 middle, 3 right, 4 nose)
-   * @param array Hex-Color
-   * @param integer l'heure (time)
-   * @return $this
-   */
-  public function addLedCommand($timeslice, $led, $color)
-  {
-	$this->call_params["chor"] .= $timeslice.",led,".$led.",".implode(",",$color).",";
-	return $this;
   }
 
   /**
@@ -91,7 +60,7 @@ class NabaztagAPI
   public function sendTts($message)
   {
     $this->call_params = array("tts" => urlencode($message));
-    return $this->callNabaztag();
+    return $this->callApi();
   }
 
   /**
@@ -100,9 +69,8 @@ class NabaztagAPI
   public function getVoicesList()
   {
     $this->call_params["action"] = 9;
-    $voices = $this->callNabaztag();
+    $voices = $this->callApi();
     $langs  = $this->getSelectedLanguages();
-    $proper_voices = array();
     $result = array();
 
     foreach($voices->voice as $voice)
@@ -121,7 +89,7 @@ class NabaztagAPI
   public function getSelectedLanguages()
   {
     $this->call_params["action"] = 11;
-    $result = $this->callNabaztag();
+    $result = $this->callApi();
     $langs = array();
     foreach($result->myLang as $lang)
     {
@@ -134,7 +102,7 @@ class NabaztagAPI
   /**
    * Constructs url and fires the request returns answer
    */
-  public function callNabaztag()
+  private function callApi()
   {
     $params = array_merge($this->auth_params, $this->call_params, $this->settings);
     $url = "";  
@@ -148,5 +116,16 @@ class NabaztagAPI
     $this->call_params = array();
     return simplexml_load_file($url);
   }
+
+  /**
+   * Send a chor
+   *
+   * @param NabChor
+   * @return result
+   */
+   public function sendChor(NabChor $chor)
+   {
+     $this->call_params["chor"] = $chor->getChor();
+     return $this->callApi();
+   } 
 }
-?>

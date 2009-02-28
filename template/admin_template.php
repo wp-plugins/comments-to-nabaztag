@@ -37,9 +37,15 @@
    <p class="submit"><input type="submit" class="button-primary" value="<?php echo __("Submit", 'nabaztag')?>" /></p>
 </form>
 <?php if(get_option("nab_valid") == 1):?>
-<h2><?php echo __("Step 3: Configure the plugin further, if you like!", 'nabaztag')?></h2>
+<h2><?php echo __("Step 3: Pick your favourite voice!", 'nabaztag')?></h2>
+<p><?php echo __("In the selectbox below you find a list of all the available voices four your languages.")?><br />
+   <?php echo __("Pick a voice, adjust the notification test and press preview. If you like the sound save your settings with submit")?></p>
 <form name="form2" method="post" action="<?php $location ?>">
 <table class="form-table">
+  <tr valign="top">
+    <th scope="row"><label for="nab_message"><?php echo __("Notification Text", 'nabaztag')?></label></th>
+    <td><input name="nab_message" value="<?php echo get_option("nab_message");?>" type="text" class="regular-text" /></td>
+  </tr>
   <tr valign="top">
     <th scope="row"><label for="voice"><?php echo __("Voice", 'nabaztag')?></label></th>
     <td><select name="voice" size="1">
@@ -51,7 +57,8 @@
     </select></td>
   </tr>
 </table>
-<p class="submit"><input type="submit" class="button-primary" value="<?php echo __("Submit", 'nabaztag')?>" /></p>
+<p class="submit"><input type="submit" class="button-primary" value="<?php echo __("Submit", 'nabaztag')?>" />
+<input name="nb_preview" type="submit" class="button-primary" value="<?php echo __("Preview", 'nabaztag')?>" /></p>
 </form>
 
   <h2><?php echo __("Step 4: Enjoy your Nabaztag and giv'me some feedback", 'nabaztag')?></h2>
